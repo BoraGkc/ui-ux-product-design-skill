@@ -1,6 +1,6 @@
 # UI/UX Product Design Skill
 
-A Codex skill for product UI/UX reasoning, redesign, implementation, and validation. It helps turn vague requests such as “make it nicer” into clearer product jobs, usable workflows, explicit states, accessible interactions, and verified product changes.
+A reusable skill for AI coding agents and multi-agent workflows. It supports product UI/UX reasoning, redesign, implementation, and validation, turning vague requests such as “make it nicer” into clearer product jobs, usable workflows, explicit states, accessible interactions, and verified product changes.
 
 The skill covers dashboards, expert tools, AI-assisted products, design systems, ecommerce and UGC, onboarding, healthcare and finance workflows, search and marketplaces, editorial products, sensitive mobile experiences, booking flows, security and IoT products, data visualization, accessibility, web performance, and production delivery quality.
 
@@ -17,14 +17,14 @@ New or visually open UI also loads a compact, system-first visual-craft guide. I
 
 ## Install
 
-Ask Codex:
+Ask your coding agent:
 
 ```text
 Install this skill:
 https://github.com/BoraGkc/ui-ux-product-design-skill/tree/main/ui-ux-product-design
 ```
 
-Or install it manually:
+Or install it manually using Codex's default skill directory:
 
 ```bash
 git clone https://github.com/BoraGkc/ui-ux-product-design-skill.git
@@ -32,13 +32,13 @@ mkdir -p ~/.codex/skills
 cp -R ui-ux-product-design-skill/ui-ux-product-design ~/.codex/skills/
 ```
 
-The skill will be available as `$ui-ux-product-design` on the next Codex turn.
+The skill name is `ui-ux-product-design`; compatible agents may expose it as `$ui-ux-product-design` in the next session.
 
 ### Installation and updates
 
-Installation copies only the `ui-ux-product-design/` folder into your local Codex skills directory. It does not run from GitHub, connect your account to the repository, or update automatically.
+Installation copies only the `ui-ux-product-design/` folder into your agent's local skills directory. It does not run from GitHub, connect your account to the repository, or update automatically. The manual example above uses Codex's `~/.codex/skills` path; other compatible agents may use a different directory.
 
-To update, ask Codex:
+To update, ask your coding agent:
 
 ```text
 Update my installed skill from:
