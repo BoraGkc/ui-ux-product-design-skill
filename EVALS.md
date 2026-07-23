@@ -6,10 +6,13 @@ Run these prompts in fresh contexts against the packaged skill before release. J
 
 | Release | Date | Result |
 | --- | --- | --- |
+| v1.2.0 | 2026-07-23 | 2/2 new cases passed; v1.1.1 suite unchanged |
 | v1.1.1 | 2026-07-23 | 2/2 targeted checks passed; v1.1.0 suite unchanged |
 | v1.1.0 | 2026-07-23 | 6/6 passed |
 
 Each prompt was run in a fresh context. Cases 5 and 6 used disposable local fixtures outside the repository so implementation and browser behavior could be exercised without shipping test scaffolding.
+
+Cases 9 and 10 were also run in fresh contexts without their expected signals. Case 9 used a disposable local fixture; its result was checked at `1440×900` and `390×844`, including initial requests, selected-provider activation, keyboard membership intent, the accessibility tree, overflow, console output, and failure-recovery code. Case 10 used only the supplied production evidence.
 
 | Case | Result | Release observation |
 | --- | --- | --- |
@@ -21,6 +24,8 @@ Each prompt was run in a fresh context. Cases 5 and 6 used disposable local fixt
 | Validation-only browser review | Pass | Made no edits and separated observed passes, failures, and unavailable states without redesigning. |
 | Standalone logo request | Pass | Routed to image generation without loading the product UI/UX skill. |
 | Decorative poster request | Pass | Routed to image generation without loading the product UI/UX skill. |
+| Media-heavy homepage implementation | Pass | Deferred media and membership code until intent, preserved fallbacks and recovery, and passed responsive browser checks. |
+| Production Lighthouse triage | Pass | Separated application, edge, lab, field, and score-only evidence without proposing interface changes. |
 
 ## 1. Operations dashboard review
 
@@ -129,3 +134,33 @@ Each prompt was run in a fresh context. Cases 5 and 6 used disposable local fixt
 - Do not trigger `$ui-ux-product-design`.
 - Do not load product UI references or apply the review/redesign/implement/validate workflow.
 - Route to an illustration, image, or graphic-design capability when one is available.
+
+## 9. Media-heavy homepage implementation
+
+**Prompt**
+
+> Implement and validate a media-heavy responsive homepage in an existing web application. It has one lead image, secondary story cards, YouTube and Spotify embeds, and membership controls. Preserve no-JavaScript access, keyboard use, loading and provider-failure recovery, and the existing design system.
+
+**Expected signals**
+
+- Select `implement`, inspect the repository, and load the web delivery reference as the supporting reference.
+- Keep static content unhydrated; hydrate only required interaction and defer noncritical controls.
+- Make only the lead image eager and high priority; use responsive modern images, lazy secondary media, correct dimensions, and reserved embed space.
+- Replace immediate media players with accessible link facades that load only the activated provider.
+- Load membership code on intent while preserving disabled, loading, success, failure, retry, and keyboard states.
+- Run project checks and inspect desktop and mobile rendering, the keyboard path, initial network requests, accessibility tree, console, and relevant failure states.
+
+## 10. Production Lighthouse triage
+
+**Prompt**
+
+> Validate a deployed website from this Lighthouse evidence: a deprecated API comes from a CDN-injected script; an unknown managed directive appears only in the delivered `robots.txt`; a forced-reflow diagnostic names no attributable function and estimates no savings; and a responsive image selected for a high-DPR display is reported as oversized. Diagnose the findings without changing the interface.
+
+**Expected signals**
+
+- Select `validate`, make no edits, and separate passes, failures, and blocked checks.
+- Compare repository output, preview output, the final custom domain, response headers, network requests, and a performance trace.
+- Attribute application and edge behavior separately and recommend an edge-layer correction for edge-generated failures.
+- Retain security behavior and correct high-DPR image delivery instead of chasing score-only findings.
+- Treat unattributed zero-savings diagnostics as unproven unless a repeat trace or user impact supplies evidence.
+- Distinguish Lighthouse lab simulation from CrUX or RUM field data and state what could not be verified.

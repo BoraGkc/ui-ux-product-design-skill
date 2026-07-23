@@ -1,6 +1,6 @@
 ---
 name: ui-ux-product-design
-description: Product UI/UX reasoning, redesign, implementation, and validation for application screens, dashboards, workflows, expert tools, AI-assisted and trust-sensitive experiences, and task-oriented product or service websites. Use for user-job framing, information architecture, interaction flow, hierarchy, states, accessibility, responsive behavior, design-system fit, visual craft, and implementation review. Do not use for standalone logos, posters, illustrations, or decorative styling without a user workflow.
+description: Product UI/UX reasoning, redesign, implementation, and validation for application screens, dashboards, workflows, expert tools, AI-assisted and trust-sensitive experiences, and task-oriented product or service websites. Use for user-job framing, information architecture, interaction flow, hierarchy, states, accessibility, responsive behavior, web performance and delivery quality, design-system fit, visual craft, and implementation review. Do not use for standalone logos, posters, illustrations, or decorative styling without a user workflow.
 ---
 
 # UI/UX Product Design
@@ -10,6 +10,8 @@ description: Product UI/UX reasoning, redesign, implementation, and validation f
 Design from the user's job, not from the requested widget. Identify what the user needs to decide, enter, compare, recover from, or complete before polishing the screen.
 
 Prefer product clarity over decorative sophistication. Make users understand where they are, what they can do, what happened, and what happens next.
+
+Treat delivered quality as part of the interface. A visually successful web experience must remain usable while loading, keyboard-accessible, layout-stable, and economical on mobile.
 
 Reuse the existing design system, components, and product language before introducing new patterns. Break a system pattern only when it blocks the right experience, then document the improved pattern.
 
@@ -28,7 +30,9 @@ Respect the authorization implied by the request. A review or validation request
 
 Load only the references needed for the task. Use one primary domain reference and at most one supporting reference for a system constraint or risk layer.
 
-Read `references/visual-craft.md` only for new UI, restyling, or implementation where the visual direction is open. Skip it when an established design system already resolves the visual decisions or when the task is validation-only.
+For browser-based **Implement** and **Validate** tasks, read `references/web-interface-delivery-quality.md` as the supporting reference. For **Review** and **Redesign**, read it only when performance or delivery is explicitly relevant.
+
+Read `references/visual-craft.md` only for new UI or restyling where the visual direction is open and the delivery reference is not required. Skip it when an established design system already resolves the visual decisions or when the task is validation-only.
 
 Choose domain references in this order:
 
@@ -91,6 +95,9 @@ For an existing interface, inspect in this order:
 10. Existing design-system fit.
 11. Realistic data, long labels, missing data, and narrow widths.
 12. Contrast, keyboard path, focus, labels, target size, and reduced motion.
+13. Semantic structure, heading order, landmarks, and accessible names.
+14. Loading cost, layout stability, responsive media, hydration, and third-party requests.
+15. Differences between repository output and the deployed response.
 
 Describe user-facing problems rather than taste preferences.
 
@@ -121,11 +128,17 @@ In **implement** mode:
 1. Read an existing `DESIGN.md` or `PRODUCT.md` as project memory; do not create either file unless the user asks.
 2. Trace the current flow and inspect every affected component.
 3. Reuse existing tokens, components, utilities, and dependencies.
-4. Load `references/visual-craft.md` only when visual choices remain open.
+4. Load `references/visual-craft.md` only when visual choices remain open and reference routing allows it.
 5. Change the fewest files that produce a complete result.
-6. Preserve accessibility and error handling.
-7. Run the project's relevant checks.
-8. Verify the interface before reporting completion.
+6. Prefer semantic HTML and server-rendered or static content before client JavaScript.
+7. Hydrate only required interaction; defer noncritical UI until visible or requested.
+8. Keep heavy third-party embeds behind accessible links or facades, and load optional membership or account code on intent.
+9. Prioritize only the actual LCP asset, lazy-load secondary media, and reserve media dimensions.
+10. Keep hidden or duplicated controls unfocusable; never place focusable descendants under `aria-hidden="true"`.
+11. Preserve accessibility and error handling.
+12. Identify the responsible component, request, script, or edge layer before optimizing.
+13. Run the project's relevant checks.
+14. Verify the interface before reporting completion.
 
 ### 5. Verify implementation
 
@@ -136,6 +149,8 @@ When a runnable interface exists, verification is required:
 - Check focus visibility, long labels, realistic data, overflow, and horizontal scrolling.
 - Check every relevant loading, empty, invalid, error, success, disabled, destructive, and partial-data state.
 - Check reduced-motion behavior and browser console errors.
+- Inspect initial network requests and the accessibility tree for browser-based interfaces.
+- Verify the deployed custom domain when an edge or CDN can alter scripts, headers, redirects, or `robots.txt`.
 - Capture before and after screenshots for an existing-screen redesign.
 
 Fix issues within the requested scope and repeat the affected checks. If the interface cannot run or browser access is unavailable, state exactly what was not verified and why. Never imply a visual check passed when it was not run.
