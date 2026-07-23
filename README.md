@@ -1,6 +1,6 @@
 # UI/UX Product Design Skill
 
-A Codex skill for product UI/UX design, redesign, and review. It helps turn vague requests such as “make it nicer” into clearer product jobs, usable workflows, explicit states, accessible interactions, and implementation-ready recommendations.
+A Codex skill for product UI/UX reasoning, redesign, implementation, and validation. It helps turn vague requests such as “make it nicer” into clearer product jobs, usable workflows, explicit states, accessible interactions, and verified product changes.
 
 The skill covers dashboards, expert tools, AI-assisted products, design systems, ecommerce and UGC, onboarding, healthcare and finance workflows, search and marketplaces, editorial products, sensitive mobile experiences, booking flows, security and IoT products, and data visualization.
 
@@ -33,6 +33,19 @@ cp -R ui-ux-product-design-skill/ui-ux-product-design ~/.codex/skills/
 ```
 
 The skill will be available as `$ui-ux-product-design` on the next Codex turn.
+
+### Installation and updates
+
+Installation copies only the `ui-ux-product-design/` folder into your local Codex skills directory. It does not run from GitHub, connect your account to the repository, or update automatically.
+
+To update, ask Codex:
+
+```text
+Update my installed skill from:
+https://github.com/BoraGkc/ui-ux-product-design-skill/tree/main/ui-ux-product-design
+```
+
+Back up intentional local edits first because an update may replace installed skill files.
 
 ## Example prompts
 

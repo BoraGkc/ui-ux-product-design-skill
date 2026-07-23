@@ -2,6 +2,16 @@
 
 Read this only when creating new UI, restyling an interface, or implementing a screen whose visual direction is not already resolved by an existing design system.
 
+## Contents
+
+- Start with the system
+- Define a compact direction
+- Use decision defaults
+- Make hierarchy do work
+- Avoid generic output
+- Use motion with restraint
+- Critique before finishing
+
 ## Start with the system
 
 Inspect the product before inventing a visual language:
@@ -23,6 +33,56 @@ Before implementation, settle six decisions:
 6. **Signature**: choose one memorable element rooted in the product's subject or workflow. Keep the rest disciplined.
 
 Use real content and realistic data. A distinctive interface comes from specific product meaning, not arbitrary visual novelty.
+
+## Use decision defaults
+
+Use these as starting points, then follow stronger product evidence or an established system.
+
+### Chart choice
+
+| User question | Default |
+| --- | --- |
+| Compare categories | Sorted bar chart |
+| See change over time | Line chart |
+| Understand composition | Stacked bar; use 100% stacking for share |
+| Find a relationship | Scatter plot |
+| Read or compare exact values | Table |
+
+Avoid pie or donut charts when there are many slices or close values.
+
+### Responsive transformation
+
+| Desktop pattern | Narrow-screen default |
+| --- | --- |
+| Dense table | Keep priority columns; open row details separately |
+| Side panel | Full-screen page or sheet |
+| Persistent filters | Filter sheet with active count and clear/apply actions |
+| Multi-column form | One task-ordered column |
+| Drag interaction | Equivalent menu or button action |
+
+Preserve context, entered data, and the primary action during every transformation.
+
+### Required states
+
+| Pattern | Minimum states |
+| --- | --- |
+| Data region | Loading, empty, error, partial, stale |
+| Form | Default, invalid, submitting, success, failure |
+| Async action | Idle, working, success, failure, uncertain, retry |
+| Destructive action | Default, confirmation, working, success, failure |
+
+Add permission, offline, conflict, or expiry states when the workflow can encounter them.
+
+### Accessibility baseline
+
+| Check | Baseline |
+| --- | --- |
+| Text contrast | `4.5:1`; `3:1` for large text |
+| Controls and focus indicators | `3:1` against adjacent colors; visible and unobscured |
+| Pointer targets | At least `24×24` CSS px or sufficient spacing; prefer `44×44` for frequent touch actions |
+| Keyboard | Logical order, operable controls, no trap, restored focus |
+| Reflow | No two-dimensional scrolling at `320` CSS px except content that requires it |
+| Motion | Preserve meaning with `prefers-reduced-motion` enabled |
 
 ## Make hierarchy do work
 
@@ -48,14 +108,6 @@ Reject a choice when it could be pasted into any unrelated product without chang
 
 Do not avoid a pattern merely because it is popular. Use it when the product meaning and user job justify it.
 
-## Use color and type deliberately
-
-- Preserve contrast for normal text, large text, controls, focus indicators, and status communication.
-- Pair color with text, icons, shape, or position when meaning is critical.
-- Keep body text readable at narrow widths and zoomed layouts.
-- Format numbers for scanning while retaining exact values in details, tooltips, or exports.
-- Use labels and copy that describe what users control, not system implementation.
-
 ## Use motion with restraint
 
 Choose at most one signature motion pattern and a small set of functional transitions:
@@ -64,16 +116,6 @@ Choose at most one signature motion pattern and a small set of functional transi
 - Keep feedback immediate and transitions short enough not to delay work.
 - Avoid bounce, scattered entrance effects, or motion that exists only to look advanced.
 - Respect `prefers-reduced-motion` and ensure the task remains understandable without animation.
-
-## Check responsive behavior
-
-Do not shrink a desktop layout and call it responsive:
-
-- Preserve the primary job and action on small screens.
-- Stack by task priority, not DOM convenience.
-- Convert dense tables to cards only when cards preserve comparison; otherwise use deliberate responsive columns or a focused detail view.
-- Avoid nested scrolling, hover-only information, clipped labels, and horizontal overflow.
-- Keep interactive targets usable and focus order logical.
 
 ## Critique before finishing
 

@@ -118,13 +118,14 @@ Define the usable interface before secondary presentation:
 
 In **implement** mode:
 
-1. Trace the current flow and inspect every affected component.
-2. Reuse existing tokens, components, utilities, and dependencies.
-3. Load `references/visual-craft.md` only when visual choices remain open.
-4. Change the fewest files that produce a complete result.
-5. Preserve accessibility and error handling.
-6. Run the project's relevant checks.
-7. Verify the interface before reporting completion.
+1. Read an existing `DESIGN.md` or `PRODUCT.md` as project memory; do not create either file unless the user asks.
+2. Trace the current flow and inspect every affected component.
+3. Reuse existing tokens, components, utilities, and dependencies.
+4. Load `references/visual-craft.md` only when visual choices remain open.
+5. Change the fewest files that produce a complete result.
+6. Preserve accessibility and error handling.
+7. Run the project's relevant checks.
+8. Verify the interface before reporting completion.
 
 ### 5. Verify implementation
 

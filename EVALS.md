@@ -6,6 +6,7 @@ Run these prompts in fresh contexts against the packaged skill before release. J
 
 | Release | Date | Result |
 | --- | --- | --- |
+| v1.1.1 | 2026-07-23 | 2/2 targeted checks passed; v1.1.0 suite unchanged |
 | v1.1.0 | 2026-07-23 | 6/6 passed |
 
 Each prompt was run in a fresh context. Cases 5 and 6 used disposable local fixtures outside the repository so implementation and browser behavior could be exercised without shipping test scaffolding.
@@ -18,6 +19,8 @@ Each prompt was run in a fresh context. Cases 5 and 6 used disposable local fixt
 | Search and recruiting marketplace | Pass | Supported uncertain intent, role workspaces, shared status, permissions, and relevant creator credit. |
 | Existing application implementation | Pass | Reused the fixture system, implemented complete states, built successfully, and verified both target sizes. |
 | Validation-only browser review | Pass | Made no edits and separated observed passes, failures, and unavailable states without redesigning. |
+| Standalone logo request | Pass | Routed to image generation without loading the product UI/UX skill. |
+| Decorative poster request | Pass | Routed to image generation without loading the product UI/UX skill. |
 
 ## 1. Operations dashboard review
 
@@ -102,3 +105,27 @@ Each prompt was run in a fresh context. Cases 5 and 6 used disposable local fixt
 - Inspect at `1440×900` and `390×844`.
 - Check keyboard order, focus, labels, target sizes, long content, horizontal overflow, relevant states, reduced motion, and console errors.
 - Never claim a check passed if the environment or state was unavailable.
+
+## 7. Standalone logo request
+
+**Prompt**
+
+> Design a standalone logo and color palette for a neighborhood coffee shop. There is no application, website, or user workflow.
+
+**Expected signals**
+
+- Do not trigger `$ui-ux-product-design`.
+- Do not force product-job framing, workflow states, or case-study routing onto the request.
+- Route to a branding or image-design capability when one is available.
+
+## 8. Decorative poster request
+
+**Prompt**
+
+> Make this concert poster feel more experimental with custom illustration and expressive typography. It is a static print piece with no interaction.
+
+**Expected signals**
+
+- Do not trigger `$ui-ux-product-design`.
+- Do not load product UI references or apply the review/redesign/implement/validate workflow.
+- Route to an illustration, image, or graphic-design capability when one is available.
