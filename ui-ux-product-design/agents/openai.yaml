@@ -1,4 +1,4 @@
 interface:
   display_name: "UI/UX Product Design"
-  short_description: "Product UI/UX reasoning, implementation, and validation"
-  default_prompt: "Use $ui-ux-product-design to review, redesign, implement, or validate this product interface with clear workflow, visual hierarchy, states, accessibility, and responsive behavior."
+  short_description: "Accessible, performant product UI/UX delivery"
+  default_prompt: "Use $ui-ux-product-design to review, redesign, implement, or validate this responsive product interface with clear workflow, accessible states, and performance-aware delivery."

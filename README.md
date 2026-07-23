@@ -2,7 +2,7 @@
 
 A Codex skill for product UI/UX reasoning, redesign, implementation, and validation. It helps turn vague requests such as “make it nicer” into clearer product jobs, usable workflows, explicit states, accessible interactions, and verified product changes.
 
-The skill covers dashboards, expert tools, AI-assisted products, design systems, ecommerce and UGC, onboarding, healthcare and finance workflows, search and marketplaces, editorial products, sensitive mobile experiences, booking flows, security and IoT products, and data visualization.
+The skill covers dashboards, expert tools, AI-assisted products, design systems, ecommerce and UGC, onboarding, healthcare and finance workflows, search and marketplaces, editorial products, sensitive mobile experiences, booking flows, security and IoT products, data visualization, accessibility, web performance, and production delivery quality.
 
 ## How it works
 
@@ -69,6 +69,10 @@ Use $ui-ux-product-design to implement this settings screen using the existing d
 Use $ui-ux-product-design to validate this checkout without changing it.
 ```
 
+```text
+Use $ui-ux-product-design to implement and validate this media-heavy responsive homepage, including its initial network cost, keyboard path, accessibility tree, and deployed behavior.
+```
+
 ## Repository structure
 
 ```text
@@ -81,6 +85,7 @@ Use $ui-ux-product-design to validate this checkout without changing it.
     ├── SKILL.md
     ├── agents/openai.yaml
     └── references/
+        ├── web-interface-delivery-quality.md
         └── visual-craft.md
 ```
 

@@ -114,6 +114,14 @@ Creators are identified as the authors or portfolio owners of the reviewed pages
 - [The Standard](https://www.jonathanpatterson.com/product-design-project-4.html)
 - [MVP Made Easy](https://www.jonathanpatterson.com/product-design-project-5.html)
 
+## Web delivery and accessibility
+
+- [Core Web Vitals workflows with Google tools](https://web.dev/articles/vitals-tools)
+- [Optimize Largest Contentful Paint](https://web.dev/articles/optimize-lcp)
+- [Lazy-load offscreen iframes](https://web.dev/articles/iframe-lazy-loading)
+- [MDN: `aria-hidden`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden)
+- [Chrome Lighthouse: `robots.txt` is not valid](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt)
+
 ## Rights
 
 All third-party case studies, websites, images, trademarks, and project materials remain the property of their respective owners. The repository's CC BY 4.0 license applies only to original repository content by Bora Gökçe.
