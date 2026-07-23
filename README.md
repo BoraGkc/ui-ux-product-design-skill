@@ -4,6 +4,17 @@ A Codex skill for product UI/UX design, redesign, and review. It helps turn vagu
 
 The skill covers dashboards, expert tools, AI-assisted products, design systems, ecommerce and UGC, onboarding, healthcare and finance workflows, search and marketplaces, editorial products, sensitive mobile experiences, booking flows, security and IoT products, and data visualization.
 
+## How it works
+
+The skill selects one internal mode from the request:
+
+- **Review** diagnoses and prioritizes issues without editing.
+- **Redesign** produces an implementation-ready product proposal without writing code unless asked.
+- **Implement** reuses the existing system, makes the smallest complete change, and verifies the runnable interface.
+- **Validate** preserves the current design and reports pass, fail, and blocked checks.
+
+New or visually open UI also loads a compact, system-first visual-craft guide. It does not install a preset database or force a house style.
+
 ## Install
 
 Ask Codex:
@@ -37,10 +48,19 @@ Use $ui-ux-product-design to redesign this expert workspace without hiding the p
 Use $ui-ux-product-design to design an AI recommendation flow with clear consent and recovery states.
 ```
 
+```text
+Use $ui-ux-product-design to implement this settings screen using the existing design system, then verify it at desktop and mobile sizes.
+```
+
+```text
+Use $ui-ux-product-design to validate this checkout without changing it.
+```
+
 ## Repository structure
 
 ```text
 .
+├── EVALS.md
 ├── README.md
 ├── LICENSE
 ├── SOURCES.md
@@ -48,6 +68,7 @@ Use $ui-ux-product-design to design an AI recommendation flow with clear consent
     ├── SKILL.md
     ├── agents/openai.yaml
     └── references/
+        └── visual-craft.md
 ```
 
 Repository documentation stays outside the installable skill folder.
