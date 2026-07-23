@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI/UX Product Design"
+  short_description: "Product UI/UX reasoning and review"
+  default_prompt: "Use $ui-ux-product-design to redesign this product screen with stronger user clarity, visual hierarchy, and interaction flow."
